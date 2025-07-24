@@ -19,10 +19,7 @@ export default function Financeiro({ setPaginaAtual }) {
 
   return (
     <div className="financeiro-container" ref={conteudoRef}>
-      <img
-        className="topoFinanceiro"
-        src="../public/img/topo-financeiro.jpg"
-      ></img>
+      <img className="topoFinanceiro" src="img/topo-financeiro.jpg"></img>
 
       {/* Cadastro Cliente */}
       <div className="section-wrapper">
