@@ -58,7 +58,7 @@ body {
   background-color: #ddd;
   transform: scale(1.03);
 }
-.form-table-cadastro {
+.form-cadastro {
   width: 350px;
   position: relative;
   margin: auto;
@@ -169,18 +169,18 @@ body {
 
 .section-wrapper,
 .section {
-  margin-bottom: 30px;
-  padding: 20px;
+  margin-bottom: 2px;
+  padding: 7px;
   background: white;
-  border-radius: 10px;
+  border-radius: 15px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
 
 .section-title {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
-  margin-bottom: 15px;
-  color: #333;
+  margin-bottom: 6px;
+  color: #dc3545;
 }
 
 .input-row {
@@ -198,7 +198,6 @@ body {
 
 .input-group label {
   font-weight: bold;
-  margin-bottom: 5px;
   color: #444;
 }
 
@@ -242,4 +241,29 @@ button:hover {
 .topoFinanceiro {
   width: 830px;
   margin: 0;
+}
+.btcadastro {
+  margin: 20px 0 0 0;
+  background-color: #dc3545;
+}
+.bthome {
+  margin: 20px 0 0 0;
+  cursor: pointer;
+  width: 80px;
+}
+
+.estiloInput {
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0 15px 0;
+  border: none;
+  background-color: #0056b3;
+}
+pre {
+  color: #000000;
+  font-size: 20px;
+  padding: 10px;
+  font-family: "Trebuchet MS";
+  background-color: #c8c8c8;
+  border-radius: 20px;
 }

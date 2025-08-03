@@ -36,8 +36,7 @@ export default function Agenda({ setPaginaAtual }) {
 
   return (
     <div className="agenda-container">
-      <h2>AGENDA</h2>
-
+      <h2>Clientes Agendados</h2>
       <table className="cliente-tabela">
         <thead>
           <tr>
@@ -71,7 +70,6 @@ export default function Agenda({ setPaginaAtual }) {
           ))}
         </tbody>
       </table>
-
       {/* POPUP */}
       {popupAtivo && (
         <div className="popup-overlay" onClick={fecharPopup}>
@@ -83,12 +81,16 @@ export default function Agenda({ setPaginaAtual }) {
           </div>
         </div>
       )}
-      <br />
-      <button onClick={() => setPaginaAtual("home")}>Home</button>
-      <br />
-      <button onClick={() => setPaginaAtual("pagina10")}>
+      <button className="btcadastro" onClick={() => setPaginaAtual("pagina8")}>
         Cadastro Agenda
       </button>
+      <br />
+      <img
+        className="bthome"
+        src="/img/bthome.png"
+        alt="Botão Home"
+        onClick={() => setPaginaAtual("home")}
+      />
     </div>
   );
 }

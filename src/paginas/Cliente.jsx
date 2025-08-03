@@ -51,7 +51,13 @@ export default function Cliente({ setPaginaAtual }) {
           ))}
         </tbody>
       </table>
-      <button onClick={() => setPaginaAtual("home")}>Voltar para Home</button>
+      <img
+        className="bthome"
+        src="/img/bthome.png"
+        alt="Botão Home"
+        style={{}}
+        onClick={() => setPaginaAtual("home")}
+      />
     </div>
   );
 }

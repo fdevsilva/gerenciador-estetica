@@ -2,12 +2,10 @@ import React, { useState } from "react";
 
 export default function CadastroAgenda({ setPaginaAtual }) {
   const [form, setForm] = useState({
-    nome: "teste nome",
-    whatsapp: "testse 027 995",
-    regiao: "testes cariacica",
-    marca: "testes toyota",
-    modelo: "testes corolla",
-    placa: "testes placa",
+    nome: "",
+    whatsapp: "",
+    data: "",
+    servico: "",
   });
 
   const handleSubmit = (e) => {
@@ -17,20 +15,19 @@ export default function CadastroAgenda({ setPaginaAtual }) {
     setForm({
       nome: "",
       whatsapp: "",
-      regiao: "",
-      marca: "",
-      modelo: "",
-      placa: "",
+      data: "",
+      servico: "",
     });
   };
 
   return (
-    <div className="form-cadastro-agenda">
+    <div className="">
       <h2>Cadastrar agendamento</h2>
 
-      <form onSubmit={handleSubmit} className="form-table-cadastro">
-        <label>Nome:</label>
+      <form onSubmit={handleSubmit} className="form-cadastro">
         <input
+          pattern="[A-Za-zÀ-ÿ\s]+"
+          placeholder="Digite nome completo"
           type="text"
           name="nome"
           required
@@ -39,8 +36,10 @@ export default function CadastroAgenda({ setPaginaAtual }) {
           onChange={(e) => setForm({ ...form, nome: e.target.value })}
         />
 
-        <label>WhatsApp:</label>
         <input
+          pattern="\d+"
+          placeholder="xx999999999 / somente numeros"
+          inputmode="numeric"
           type="text"
           name="whatsapp"
           required
@@ -49,8 +48,8 @@ export default function CadastroAgenda({ setPaginaAtual }) {
           onChange={(e) => setForm({ ...form, whatsapp: e.target.value })}
         />
 
-        <label>Data:</label>
         <input
+          placeholder="Data do serviço"
           type="text"
           name="data"
           required
@@ -59,9 +58,9 @@ export default function CadastroAgenda({ setPaginaAtual }) {
           onChange={(e) => setForm({ ...form, data: e.target.value })}
         />
 
-        <label>serviço</label>
-        <input
+        <textarea
           type="text"
+          placeholder="Detalhamento do serviço a ser feito"
           name="serviço"
           required
           style={estiloInput}
@@ -69,12 +68,18 @@ export default function CadastroAgenda({ setPaginaAtual }) {
           onChange={(e) => setForm({ ...form, serviço: e.target.value })}
         />
 
-        <button type="submit" className="cadastrar-agendamento">
+        <button type="submit" className="btcadastro">
           Cadastrar
         </button>
       </form>
 
-      <button onClick={() => setPaginaAtual("home")}>Voltar para Home</button>
+      <img
+        className="bthome"
+        src="/img/bthome.png"
+        alt="Botão Home"
+        style={{}}
+        onClick={() => setPaginaAtual("home")}
+      />
     </div>
   );
 }

@@ -1,15 +1,14 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./css/estilo.css";
 import Agenda from "./paginas/Agenda";
-import Cadastro from "./paginas/Cadastro";
+import Cadastro from "./paginas/CadastroCliente";
 import Cliente from "./paginas/Cliente";
 import Fornecedor from "./paginas/Fornecedor";
-import Orcamento from "./paginas/Orcamento";
-import Veiculo from "./paginas/Veiculo";
 import Catalogo from "./paginas/Catalogo";
-import Lembrete from "./paginas/Lembrete";
-import Financeiro from "./paginas/Financeiro";
+import Orcamento from "./paginas/Orcamento";
 import CadastroAgenda from "./paginas/CadastroAgenda";
+import CadastroFornecedor from "./paginas/CadastroFornecedor";
+import Calculadora from "./paginas/Calculadora";
 
 export default function App() {
   const [paginaAtual, setPaginaAtual] = useState("home");
@@ -25,17 +24,16 @@ export default function App() {
       case "pagina4":
         return <Fornecedor setPaginaAtual={setPaginaAtual} />;
       case "pagina5":
-        return <Orcamento setPaginaAtual={setPaginaAtual} />;
-      case "pagina6":
-        return <Veiculo setPaginaAtual={setPaginaAtual} />;
-      case "pagina7":
         return <Catalogo setPaginaAtual={setPaginaAtual} />;
+      case "pagina6":
+        return <Orcamento setPaginaAtual={setPaginaAtual} />;
+      case "pagina7":
+        return <Calculadora setPaginaAtual={setPaginaAtual} />;
+      //duas paginas abaixo são paginas oculta do menu, sempre serão as ultimas
       case "pagina8":
-        return <Lembrete setPaginaAtual={setPaginaAtual} />;
-      case "pagina9":
-        return <Financeiro setPaginaAtual={setPaginaAtual} />;
-      case "pagina10":
         return <CadastroAgenda setPaginaAtual={setPaginaAtual} />;
+      case "pagina9":
+        return <CadastroFornecedor setPaginaAtual={setPaginaAtual} />;
       default:
         return <p>Bem-vindo! Selecione uma opção no menu.</p>;
     }
@@ -48,15 +46,13 @@ export default function App() {
       {paginaAtual === "home" && (
         <nav className="menu-grid">
           {[
-            "Agenda",
+            "Agendar cliente",
             "Cadastro cliente e veículo",
             "Lista de Cliente",
             "Fornecedor",
-            "Orçamento",
-            "Veículo",
             "Catálogo",
-            "Lembrete",
-            "Financeiro",
+            "Orcamento",
+            "Calculadora",
           ].map((nome, index) => (
             <button
               key={index}
